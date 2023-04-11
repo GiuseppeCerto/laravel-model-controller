@@ -18,9 +18,9 @@
 <body>
 
     @forelse ($movies as $movie)
-    <div class="col-3">
-        <h3>{{ $book->title }}</h3>
-        <p>{{ $book->original_title }}</p>
+    <div>
+        <h3>{{ $movie->title }}</h3>
+        <p>{{ $movie->original_title }}</p>
         <span>
 
         </span>
