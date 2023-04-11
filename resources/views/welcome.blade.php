@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-
-    @forelse ($movies as $movie)
-    <div>
-        <h3>{{ $movie->title }}</h3>
-        <p>{{ $movie->original_title }}</p>
-        <span>
-
-        </span>
+        
+    <div class="container mt-4">
+        <div class="row d-flex gap-3">
+            @forelse ($movies as $movie)
+                <div class="col-3 card pt-4 pb-4">
+                    <h3>{{ $movie->title }}</h3>
+                    <p>{{ $movie->original_title }}</p>
+                    <span class="mt-2">{{ $movie->nationality }}</span>
+                    <span class="mt-2">{{ $movie->date }}</span>
+                    <span class="mt-2">{{ $movie->vote }}</span>
+                </div>
+            @endforeach
+        </div>
     </div>
 
-    @endforeach
-
-</body>
-
-</html>
+@endsection
